@@ -119,47 +119,23 @@
 </nav>
                     </div>
                     <div id="main">
-                        <div id="home-head">
-    <div id="home-background" style="background-image: url(https://images3.alphacoders.com/113/1137395.jpg)"></div>
-    
-    <div id="home-info" class="home-info" @click="home_click">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>璃月のParodist</h1>
-                <h3>♪ ♩  Blog-Ver1.0 ♫ ♬</h3>
-                <h5>力量若是达到极限，接下来考验的便是人心</h5>
-            </div>
-        </span>
+                        
+<div class="article">
+    <div>
+        <h1> </h1>
     </div>
-    
-</div>
-
-<div id="home-posts-wrap" class="">
-    <div id="home-posts">
-        <div id="posts">
-            
-
-<div class="post">
-    <a href="/2023/06/03/神经网络入门/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
             2023/6/3
         </span>
+        
+        
     </div>
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            <p>原文出处<a target="_blank" rel="noopener" href="https://victorzhou.com/blog/intro-to-neural-networks/">Machine Learning for Beginners: An Introduction to Neural Networks</a></p>
+    <div class="content" v-pre>
+        <p>原文出处<a target="_blank" rel="noopener" href="https://victorzhou.com/blog/intro-to-neural-networks/">Machine Learning for Beginners: An Introduction to Neural Networks</a></p>
 <h4 id="砖块：神经元"><a href="#砖块：神经元" class="headerlink" title="砖块：神经元"></a>砖块：神经元</h4><p>神经网络的基本单位，神经元。神经元接受输入，对其做一些数据操作，然后产生输出。例如，这是一个2-输入神经元：<br><img src="/../../img/perceptron.svg"><br>这里发生了三个事情。首先，每个输入都跟一个权重相乘（红色）：<br>$$<br>x_1→x_1<em>w_1 \<br>x_2→x_2</em>w_2<br>$$<br>然后，加权后的输入求和，加上一个偏差b（绿色）：<br>$$<br>(x_1<em>w_1)+(x_2</em>w_2)+b<br>$$<br>最后，这个结果传递给一个激活函数f：<br>$$<br>y&#x3D;f(x_1<em>w_1+x_2</em>w_2+b)<br>$$<br>激活函数的用途是将一个无边界的输入，转变成一个可预测的形式。常用的激活函数就就是S型函数：<br><img src="/../../img/sigmoid.webp"><br>S型函数的值域是$(0, 1)$。简单来说，就是把$(−∞, +∞)$压缩到$(0, 1)$ ，很大的负数约等于$0$，很大的正数约等于$1$。</p>
 <h4 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h4><p>假设我们有一个2-输入神经元，激活函数就是S型函数，其参数如下：<br>$$<br>w&#x3D;[0,1] \<br>b&#x3D;4<br>$$<br>$w&#x3D;[0,1]$就是以向量的形式表示$w_1&#x3D;0, w_2&#x3D;1$。现在，我们给这个神经元一个输入$x&#x3D;[2, 3]$。我们用点积来表示：</p>
 <p><img src="/../../img/l1.png"></p>
@@ -695,255 +671,14 @@ print(&quot;Frank: %.3f&quot; % network.feedforward(frank)) # 0.039 - M
 </ul>
 <p>接下来你还可以：<br><a target="_blank" rel="noopener" href="https://victorzhou.com/blog/intro-to-neural-networks/">跳转底部链接</a></p>
 
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/06/03/神经网络入门/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2022/09/15/test/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
-            </span>
-            2022/9/15
-        </span>
-    </div>
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            <h1 id="typescript与Javascript"><a href="#typescript与Javascript" class="headerlink" title="typescript与Javascript"></a>typescript与Javascript</h1><p>js是动态类型弱类型语言，而ts是静态类型弱类型语言。<br>强类型语言：不允许改变变量的数据类型，除非进行强制类型转换。如python<br>弱类型语言：变量可以被赋予不同的值。<br>静态类型语言：在编译阶段确定所有变量的类型。<br>动态类型语言：在执行阶段确定所有变量的类型。</p>
-<h2 id="ts的数据类型"><a href="#ts的数据类型" class="headerlink" title="ts的数据类型"></a>ts的数据类型</h2><p>ts的数据类型有两种，一种是js原有的数据类型，一种是新增的数据类型<br><strong>原有数据类型</strong><br>原始类型：number&#x2F;string&#x2F;bollean&#x2F;null&#x2F;undefined&#x2F;symbol<br>对象类型：object（数组、对象、函数等）<br>js写法:</p>
-<pre><code class="js">let a = &#39;hhh&#39;
-let b = 666
-let c = true
-let d = null
-let e = undefined
-let f = &#123;name:&#39;maobuhui&#39;&#125;
-let g = 100
-let h = Symbol()
-</code></pre>
-<p>ts写法:</p>
-<pre><code class="ts">let a:string = &#39;hhh&#39;
-let b:number = 666
-let c:boolean = true
-let d:null = null
-let e:undefined = undefined
-let f:object = &#123;name:&#39;maobuhui&#39;&#125;
-let g:bigint = 100n
-let h:symbol = Symbol()
-</code></pre>
-<p><strong>新增类型</strong></p>
-<ol>
-<li>联合类型</li>
-<li>自定义类型(类型别名)</li>
-<li>接口</li>
-<li>元组</li>
-<li>字面量类型</li>
-<li>枚举</li>
-<li>void</li>
-<li>any<br>对象类型(接口 interface)</li>
-</ol>
-<pre><code class="js">interface IByteDancer&#123;
-    /*只读属性：约束属性不可在对象初始化外赋值*/
-    readonly jobId:number;
-    name:string;
-    sex:&#39;man&#39;|&#39;woman&#39;|&#39;other&#39;;
-    age:number;
-    /*可选属性：定义该属性可以不存在*/
-    hobby?:string;
-    /*任意属性：约束所有对象属性必须是该属性的子类型*/
-    [key:string]:any;
-&#125;
-const bytedancer: IBytedancer = &#123;
-    jobId:9303245,
-    name: &#39;lin&#39;,
-    sex: &#39;man&#39;,
-    age: 28,
-    hobby: &#39;swimming&#39;
-&#125;
-</code></pre>
-<p>函数类型</p>
-<pre><code class="ts">function add(x:number,y:number):number&#123;
-    return x+y;
-&#125;
-const mult:(x:number,y:number) =&gt; number = (x,y) =&gt; x*y;
-</code></pre>
-<p>函数重载</p>
-<pre><code class="ts">/*对getDate函数进行重载，timestamp为可缺省参数*/
-function getDate(type:&#39;string&#39;, timestamp?: string) :string;
-function getDate (type:&#39;date&#39; ,timestamp?: string): Date;
-function getDate(type: &#39;string&#39; | &#39;date&#39;, timestamp?: string): Date | string &#123;
-const date = new Date(timestamp); 
-return type === &#39;string&#39; ? date.toLocaleString() : date;
-&#125;
-const X = getDate( &#39;date&#39;); // x: Date
-const y = getDate(&#39;string&#39;, &#39;2018-01-10&#39;); // y: string
-
-interface IGetDate &#123;
-(type :&#39;string&#39;, timestamp?: string): string;
-(type :&#39;date&#39; , timestamp?: string): Date ;
-(type : &#39;string&#39; | &#39;date&#39;,timestamp?: string): Date | string; 
-&#125;
-/*不能将类型“(type:any, timestamp: any) =&gt; string | Date&quot; 分配给类型&quot;IGetDate&quot;。
-不能将类型&quot;string | Date&quot; 分配给类型&quot;string&quot;。
-不能将类型&quot;Date&quot;分配给类型&quot;string&quot;。ts (2322) */
-const getDate2: IGetDate = (type, timestamp) =&gt; &#123;
-const date = new Date( timestamp ) ;
-return type === &#39;string&#39; ? date. toLocaleString() : date;
-&#125;
-</code></pre>
-<p>数组类型</p>
-<pre><code class="ts">/*
-「类型+方括号」表示*/
-type IArr1 = number[];
-/*泛型表示 */
-type IArr2 = Array&lt;string|number| Record&lt;string, number&gt;&gt;;
-/*元祖表示*/
-type IArr3 = [number, number, string, string] ;
-/*接口表示*/
-interface IArr4 &#123;
-[key: number]: any;
-&#125;
-const arr1: IArr1 = [1 , 2, 3, 4, 5, 6];
-const arr2: IArr2 = [1 , 2, &#39;3&#39;, &#39;4&#39;,&#123;a:1&#125;];
-const arr3: IArr3 = [1, 2, &#39;3&#39;, &#39;4&#39;];
-const arr4: IArr4 = [&#39;string&#39;, () =&gt; null, &#123;&#125;, []];
-</code></pre>
-<p>ts补充类型</p>
-<pre><code class="ts">/*空类型，表示无赋值*/
-type IEmptyFunction = () =&gt; void;
-/*任意类型，是所有类型的子类型*/ 
-type IAnyType = any ;
-/*枚举类型:支持枚举值到枚举名的正、反向映射*/
-enum EnumExample &#123;
-    add = &#39;+&#39;,
-    mult = &#39;*&#39;
-&#125;
-EnumExample[&#39;add&#39;] === &#39;+&#39;;
-EnumExample[&#39;+&#39;] === &#39;add&#39; ;
-enum ECorlor &#123; Mon, Tue, Wed, Thu, Fri, Sat, Sun &#125;;
-ECorlor[&#39;Mon&#39;] === 0;
-ECorlor[0] === &#39;Mon&#39; ;
-/*泛型*/
-type INumArr = Array&lt;number&gt;;
-</code></pre>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2022/09/15/test/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2022/09/11/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
-            </span>
-            2022/9/11
-        </span>
-    </div>
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2022/09/11/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-             
-<div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">
-            1
-        </span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
-        </div>
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style" style="width: 300px">
-        <div class="avatar">
-            <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-hutao/sticker_4.png?6117fce92fae417e17387cd6352ad459&d=200x200 " alt="avatar">
-        </div>
-        <div class="name">
-            Parodist1225
-        </div>
-        <div class="descriptions">
-            
-            <div class="description">
-                HUSTer摸鱼parodist
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.9.1/waline.min.css" />
+        <div id="comment">
+            <div id="waline-container">
             </div>
-            
         </div>
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a href="function link() { [native code] }">
-                    <i class="fa- fa- fa-fw"></i>
-                </a>
-            </span>
-            
-        </div>
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://github.com/Parodist1225">
-                    0
-                </a>
-            </div>
-            
-        </div>
-    </div>
-</div>
-    </div>
     
 </div>
                          
@@ -973,5 +708,22 @@ type INumArr = Array&lt;number&gt;;
         <script src="/js/particlex.js"></script>
         <script src="/js/showimg.js"></script>
         
+    <script src="https://cdn.staticfile.org/waline/2.9.1/waline.min.js"></script>
+    <script>
+        Waline.init({
+            el: '#waline-container',
+            serverURL: "https://waline-try.vercel.app",
+            commentCount: "true",
+            pageview: "false",
+            emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(','),
+            meta: "nick,mail,link".split(','),
+            requiredMeta: "nick".split(','),
+            lang: "zh-CN",
+            wordLimit: parseInt("0"),
+            pageSize: "10",
+            login: "enable",
+        });
+    </script>
+
     </body>
 </html>
