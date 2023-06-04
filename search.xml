@@ -126,7 +126,7 @@ type INumArr = Array&lt;number&gt;;
     <title>神经网络入门1</title>
     <url>/2023/06/03/networkbase1/</url>
     <content><![CDATA[<p>原文出处<a href="https://victorzhou.com/blog/intro-to-neural-networks/">Machine Learning for Beginners: An Introduction to Neural Networks</a></p>
-<h4 id="砖块：神经元"><a href="#砖块：神经元" class="headerlink" title="砖块：神经元"></a>砖块：神经元</h4><p>神经网络的基本单位，神经元。神经元接受输入，对其做一些数据操作，然后产生输出。例如，这是一个2-输入神经元：<br><img src="/.io//perceptron.svg" alt><br><img src="/.io//img/perceptron.svg" alt><br>这里发生了三个事情。首先，每个输入都跟一个权重相乘（红色）：</p>
+<h4 id="砖块：神经元"><a href="#砖块：神经元" class="headerlink" title="砖块：神经元"></a>砖块：神经元</h4><p>神经网络的基本单位，神经元。神经元接受输入，对其做一些数据操作，然后产生输出。例如，这是一个2-输入神经元：<br><img src="/.io//perceptron.svg" alt><br><img src="/.io//06/03/networkbase1/perceptron.svg" class title="This is an example image"><br>这里发生了三个事情。首先，每个输入都跟一个权重相乘（红色）：</p>
 <script type="math/tex; mode=display">
 x_1→x_1*w_1 \\
 x_2→x_2*w_2</script><p>然后，加权后的输入求和，加上一个偏差b（绿色）：</p>
