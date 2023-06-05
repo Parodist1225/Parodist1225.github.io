@@ -1,126 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="lang-bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="lang-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="lang-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="lang-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>TS(一)</title>
-    <url>/2022/09/15/test/</url>
-    <content><![CDATA[<h1 id="typescript与Javascript"><a href="#typescript与Javascript" class="headerlink" title="typescript与Javascript"></a>typescript与Javascript</h1><p>js是动态类型弱类型语言，而ts是静态类型弱类型语言。<br>强类型语言：不允许改变变量的数据类型，除非进行强制类型转换。如python<br>弱类型语言：变量可以被赋予不同的值。<br>静态类型语言：在编译阶段确定所有变量的类型。<br>动态类型语言：在执行阶段确定所有变量的类型。</p>
-<h2 id="ts的数据类型"><a href="#ts的数据类型" class="headerlink" title="ts的数据类型"></a>ts的数据类型</h2><p>ts的数据类型有两种，一种是js原有的数据类型，一种是新增的数据类型<br><strong>原有数据类型</strong><br>原始类型：number/string/bollean/null/undefined/symbol<br>对象类型：object（数组、对象、函数等）<br>js写法:</p>
-<pre><code class="lang-js">let a = &#39;hhh&#39;
-let b = 666
-let c = true
-let d = null
-let e = undefined
-let f = &#123;name:&#39;maobuhui&#39;&#125;
-let g = 100
-let h = Symbol()
-</code></pre>
-<p>ts写法:</p>
-<pre><code class="lang-ts">let a:string = &#39;hhh&#39;
-let b:number = 666
-let c:boolean = true
-let d:null = null
-let e:undefined = undefined
-let f:object = &#123;name:&#39;maobuhui&#39;&#125;
-let g:bigint = 100n
-let h:symbol = Symbol()
-</code></pre>
-<p><strong>新增类型</strong></p>
-<ol>
-<li>联合类型</li>
-<li>自定义类型(类型别名)</li>
-<li>接口</li>
-<li>元组</li>
-<li>字面量类型</li>
-<li>枚举</li>
-<li>void</li>
-<li>any<br>对象类型(接口 interface)<br>```js<br>interface IByteDancer{<br> /<em>只读属性：约束属性不可在对象初始化外赋值</em>/<br> readonly jobId:number;<br> name:string;<br> sex:’man’|’woman’|’other’;<br> age:number;<br> /<em>可选属性：定义该属性可以不存在</em>/<br> hobby?:string;<br> /<em>任意属性：约束所有对象属性必须是该属性的子类型</em>/</li>
-</ol>
-<pre><code>[key:string]:any;
-</code></pre><p>}<br>const bytedancer: IBytedancer = {<br>    jobId:9303245,<br>    name: ‘lin’,<br>    sex: ‘man’,<br>    age: 28,<br>    hobby: ‘swimming’<br>}</p>
-<pre><code>函数类型
-```ts
-function add(x:number,y:number):number&#123;
-    return x+y;
-&#125;
-const mult:(x:number,y:number) =&gt; number = (x,y) =&gt; x*y;
-</code></pre><p>函数重载</p>
-<pre><code class="lang-ts">/*对getDate函数进行重载，timestamp为可缺省参数*/
-function getDate(type:&#39;string&#39;, timestamp?: string) :string;
-function getDate (type:&#39;date&#39; ,timestamp?: string): Date;
-function getDate(type: &#39;string&#39; | &#39;date&#39;, timestamp?: string): Date | string &#123;
-const date = new Date(timestamp); 
-return type === &#39;string&#39; ? date.toLocaleString() : date;
-&#125;
-const X = getDate( &#39;date&#39;); // x: Date
-const y = getDate(&#39;string&#39;, &#39;2018-01-10&#39;); // y: string
+    <title>解决hexo-asset-image插件Bug:引用本地资源后路径中出现/.io/或者/.com/</title>
+    <url>/2023/06/04/hexo-bug1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>问题描述：在上传文章中用markdown语法如<code>![](img.jpg)</code>时在实际网站中GET的路径自行被添加/.io/导致获取不到该图片</p>
+<p>解决方法：打开\blog(根目录)\node_modules\hexo-asset-image\index.js，将原第24行<br><code>var endPos = link.lastIndexOf(&#39;.&#39;);</code>改为<code>var endPos = link.length-1;</code></p>
 
-interface IGetDate &#123;
-(type :&#39;string&#39;, timestamp?: string): string;
-(type :&#39;date&#39; , timestamp?: string): Date ;
-(type : &#39;string&#39; | &#39;date&#39;,timestamp?: string): Date | string; 
-&#125;
-/*不能将类型“(type:any, timestamp: any) =&gt; string | Date&quot; 分配给类型&quot;IGetDate&quot;。
-不能将类型&quot;string | Date&quot; 分配给类型&quot;string&quot;。
-不能将类型&quot;Date&quot;分配给类型&quot;string&quot;。ts (2322) */
-const getDate2: IGetDate = (type, timestamp) =&gt; &#123;
-const date = new Date( timestamp ) ;
-return type === &#39;string&#39; ? date. toLocaleString() : date;
-&#125;
-</code></pre>
-<p>数组类型</p>
-<pre><code class="lang-ts">/*
-「类型+方括号」表示*/
-type IArr1 = number[];
-/*泛型表示 */
-type IArr2 = Array&lt;string|number| Record&lt;string, number&gt;&gt;;
-/*元祖表示*/
-type IArr3 = [number, number, string, string] ;
-/*接口表示*/
-interface IArr4 &#123;
-[key: number]: any;
-&#125;
-const arr1: IArr1 = [1 , 2, 3, 4, 5, 6];
-const arr2: IArr2 = [1 , 2, &#39;3&#39;, &#39;4&#39;,&#123;a:1&#125;];
-const arr3: IArr3 = [1, 2, &#39;3&#39;, &#39;4&#39;];
-const arr4: IArr4 = [&#39;string&#39;, () =&gt; null, &#123;&#125;, []];
-</code></pre>
-<p>ts补充类型</p>
-<pre><code class="lang-ts">/*空类型，表示无赋值*/
-type IEmptyFunction = () =&gt; void;
-/*任意类型，是所有类型的子类型*/ 
-type IAnyType = any ;
-/*枚举类型:支持枚举值到枚举名的正、反向映射*/
-enum EnumExample &#123;
-    add = &#39;+&#39;,
-    mult = &#39;*&#39;
-&#125;
-EnumExample[&#39;add&#39;] === &#39;+&#39;;
-EnumExample[&#39;+&#39;] === &#39;add&#39; ;
-enum ECorlor &#123; Mon, Tue, Wed, Thu, Fri, Sat, Sun &#125;;
-ECorlor[&#39;Mon&#39;] === 0;
-ECorlor[0] === &#39;Mon&#39; ;
-/*泛型*/
-type INumArr = Array&lt;number&gt;;
-</code></pre>
+    <div id="aplayer-yTssvfjW" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 ]]></content>
+      <tags>
+        <tag>Debug</tag>
+      </tags>
   </entry>
   <entry>
     <title>神经网络入门1</title>
@@ -608,13 +498,172 @@ print(&quot;Frank: %.3f&quot; % network.feedforward(frank)) # 0.039 - M
       </tags>
   </entry>
   <entry>
-    <title>解决hexo-asset-image插件Bug:引用本地资源后路径中出现/.io/或者/.com/</title>
-    <url>/2023/06/04/hexo-bug1/</url>
-    <content><![CDATA[<p>问题描述：在上传文章中用markdown语法如<code>![](img.jpg)</code>时在实际网站中GET的路径自行被添加/.io/导致获取不到该图片</p>
-<p>解决方法：打开\blog(根目录)\node_modules\hexo-asset-image\index.js，将原第24行<br><code>var endPos = link.lastIndexOf(&#39;.&#39;);</code>改为<code>var endPos = link.length-1;</code></p>
+    <title>Hello World</title>
+    <url>/2022/09/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="lang-bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="lang-bash">$ hexo server
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="lang-bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="lang-bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>TS(一)</title>
+    <url>/2022/09/15/test/</url>
+    <content><![CDATA[<h1 id="typescript与Javascript"><a href="#typescript与Javascript" class="headerlink" title="typescript与Javascript"></a>typescript与Javascript</h1><p>js是动态类型弱类型语言，而ts是静态类型弱类型语言。<br>强类型语言：不允许改变变量的数据类型，除非进行强制类型转换。如python<br>弱类型语言：变量可以被赋予不同的值。<br>静态类型语言：在编译阶段确定所有变量的类型。<br>动态类型语言：在执行阶段确定所有变量的类型。</p>
+<h2 id="ts的数据类型"><a href="#ts的数据类型" class="headerlink" title="ts的数据类型"></a>ts的数据类型</h2><p>ts的数据类型有两种，一种是js原有的数据类型，一种是新增的数据类型<br><strong>原有数据类型</strong><br>原始类型：number/string/bollean/null/undefined/symbol<br>对象类型：object（数组、对象、函数等）<br>js写法:</p>
+<pre><code class="lang-js">let a = &#39;hhh&#39;
+let b = 666
+let c = true
+let d = null
+let e = undefined
+let f = &#123;name:&#39;maobuhui&#39;&#125;
+let g = 100
+let h = Symbol()
+</code></pre>
+<p>ts写法:</p>
+<pre><code class="lang-ts">let a:string = &#39;hhh&#39;
+let b:number = 666
+let c:boolean = true
+let d:null = null
+let e:undefined = undefined
+let f:object = &#123;name:&#39;maobuhui&#39;&#125;
+let g:bigint = 100n
+let h:symbol = Symbol()
+</code></pre>
+<p><strong>新增类型</strong></p>
+<ol>
+<li>联合类型</li>
+<li>自定义类型(类型别名)</li>
+<li>接口</li>
+<li>元组</li>
+<li>字面量类型</li>
+<li>枚举</li>
+<li>void</li>
+<li>any<br>对象类型(接口 interface)<br>```js<br>interface IByteDancer{<br> /<em>只读属性：约束属性不可在对象初始化外赋值</em>/<br> readonly jobId:number;<br> name:string;<br> sex:’man’|’woman’|’other’;<br> age:number;<br> /<em>可选属性：定义该属性可以不存在</em>/<br> hobby?:string;<br> /<em>任意属性：约束所有对象属性必须是该属性的子类型</em>/</li>
+</ol>
+<pre><code>[key:string]:any;
+</code></pre><p>}<br>const bytedancer: IBytedancer = {<br>    jobId:9303245,<br>    name: ‘lin’,<br>    sex: ‘man’,<br>    age: 28,<br>    hobby: ‘swimming’<br>}</p>
+<pre><code>函数类型
+```ts
+function add(x:number,y:number):number&#123;
+    return x+y;
+&#125;
+const mult:(x:number,y:number) =&gt; number = (x,y) =&gt; x*y;
+</code></pre><p>函数重载</p>
+<pre><code class="lang-ts">/*对getDate函数进行重载，timestamp为可缺省参数*/
+function getDate(type:&#39;string&#39;, timestamp?: string) :string;
+function getDate (type:&#39;date&#39; ,timestamp?: string): Date;
+function getDate(type: &#39;string&#39; | &#39;date&#39;, timestamp?: string): Date | string &#123;
+const date = new Date(timestamp); 
+return type === &#39;string&#39; ? date.toLocaleString() : date;
+&#125;
+const X = getDate( &#39;date&#39;); // x: Date
+const y = getDate(&#39;string&#39;, &#39;2018-01-10&#39;); // y: string
+
+interface IGetDate &#123;
+(type :&#39;string&#39;, timestamp?: string): string;
+(type :&#39;date&#39; , timestamp?: string): Date ;
+(type : &#39;string&#39; | &#39;date&#39;,timestamp?: string): Date | string; 
+&#125;
+/*不能将类型“(type:any, timestamp: any) =&gt; string | Date&quot; 分配给类型&quot;IGetDate&quot;。
+不能将类型&quot;string | Date&quot; 分配给类型&quot;string&quot;。
+不能将类型&quot;Date&quot;分配给类型&quot;string&quot;。ts (2322) */
+const getDate2: IGetDate = (type, timestamp) =&gt; &#123;
+const date = new Date( timestamp ) ;
+return type === &#39;string&#39; ? date. toLocaleString() : date;
+&#125;
+</code></pre>
+<p>数组类型</p>
+<pre><code class="lang-ts">/*
+「类型+方括号」表示*/
+type IArr1 = number[];
+/*泛型表示 */
+type IArr2 = Array&lt;string|number| Record&lt;string, number&gt;&gt;;
+/*元祖表示*/
+type IArr3 = [number, number, string, string] ;
+/*接口表示*/
+interface IArr4 &#123;
+[key: number]: any;
+&#125;
+const arr1: IArr1 = [1 , 2, 3, 4, 5, 6];
+const arr2: IArr2 = [1 , 2, &#39;3&#39;, &#39;4&#39;,&#123;a:1&#125;];
+const arr3: IArr3 = [1, 2, &#39;3&#39;, &#39;4&#39;];
+const arr4: IArr4 = [&#39;string&#39;, () =&gt; null, &#123;&#125;, []];
+</code></pre>
+<p>ts补充类型</p>
+<pre><code class="lang-ts">/*空类型，表示无赋值*/
+type IEmptyFunction = () =&gt; void;
+/*任意类型，是所有类型的子类型*/ 
+type IAnyType = any ;
+/*枚举类型:支持枚举值到枚举名的正、反向映射*/
+enum EnumExample &#123;
+    add = &#39;+&#39;,
+    mult = &#39;*&#39;
+&#125;
+EnumExample[&#39;add&#39;] === &#39;+&#39;;
+EnumExample[&#39;+&#39;] === &#39;add&#39; ;
+enum ECorlor &#123; Mon, Tue, Wed, Thu, Fri, Sat, Sun &#125;;
+ECorlor[&#39;Mon&#39;] === 0;
+ECorlor[0] === &#39;Mon&#39; ;
+/*泛型*/
+type INumArr = Array&lt;number&gt;;
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>添加网页BGM全局吸底效果及踩坑过程</title>
+    <url>/2023/06/05/hexo-init1/</url>
+    <content><![CDATA[<p>总体思路：</p>
+<ol>
+<li>采用<a href="https://aplayer.js.org/#/">Aplayer</a></li>
+<li>hexo-tag-aplayer插件也能用，如<code>&#123;% aplayer "Caffeine" "Jeff Williams" "小林未郁 - 千年之羽.mp3" "千年之羽.jpg"  %&#125; --&gt;</code><br>至于metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了)</li>
+<li>在官网下载源码：<a href="https://github.com/MoePlayer/APlayer">MoePlayer/APlayer</a></li>
+<li>上述源码只需取dist文件夹，将其解压至<code>Hexo\themes\你的主题\source中</code></li>
+<li>新建<code>Hexo\themes\你的主题\source\dist\music.js</code><br>内容为（参考）<pre><code class="lang-js">const ap = new APlayer(&#123;
+ container: document.getElementById(&#39;aplayer&#39;),
+ fixed: true,
+ autoplay: false,
+ audio: [
+   &#123;
+     name: &quot;China-Y&quot;,
+     artist: &#39;徐梦圆&#39;,
+     url: &#39;https://www.ytmp3.cn/down/59298.mp3down/39868.mp3&#39;,
+     cover: &#39;https://oeff2vktt.bkt.clouddn.com/image/84.jpg&#39;,
+   &#125;,
+   &#123;
+     name: &#39;China-X&#39;,
+     artist: &#39;徐梦圆&#39;,
+     url: &#39;https://www.ytmp3.cn/down/49003.mp3&#39;,
+     cover: &#39;https://oeff2vktt.bkt.clouddn.com/image/8.jpg&#39;,
+   &#125;,
+ ]
+&#125;);
+</code></pre>
+更多参数参考上述官方文档<a href="https://aplayer.js.org/#/">Aplayer</a></li>
+<li>这一步来实现全网页的添加，思路是将下列代码添加至博客每个页面底部<br>以Butterfly主题为例，取该主题_config.butterfly.yml文件中inject部分，将下列四行代码始终挂载在各页面底部<pre><code class="lang-yml">inject:
+head:
+ # - &lt;link rel=&quot;stylesheet&quot; href=&quot;/xxx.css&quot;&gt;
+bottom:
+ #- &lt;div class=&quot;aplayer no-destroy&quot; data-id=&quot;60198&quot; data-server=&quot;netease&quot; data-type=&quot;playlist&quot; data-fixed=&quot;true&quot; data-autoplay=&quot;true&quot;&gt; &lt;/div&gt;
+ -  &lt;link rel=&quot;stylesheet&quot; href=&quot;/dist/APlayer.min.css&quot;&gt;
+ -  &lt;div id=&quot;aplayer&quot;&gt;&lt;/div&gt;
+ -  &lt;script type=&quot;text/javascript&quot; src=&quot;/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;
+ -  &lt;script type=&quot;text/javascript&quot; src=&quot;/dist/music.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</li>
+</ol>
 ]]></content>
       <tags>
-        <tag>Debug</tag>
+        <tag>hexo建设</tag>
       </tags>
   </entry>
 </search>
