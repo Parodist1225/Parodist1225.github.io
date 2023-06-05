@@ -1,6 +1,7 @@
 const ap = new APlayer({
   container: document.getElementById('aplayer'),
   fixed: true,
+  order: 'random',
   autoplay: true,
   audio: [
     {
@@ -18,8 +19,17 @@ const ap = new APlayer({
     {
       name: 'Scarborough Fair',
       artist: '山田タマル',
-      url: 'https://music.163.com/outchain/player?type=2&id=489970551&auto=1',
-      cover: 'http://192.168.111.242:8081/IXP7819ce21c85b5e5f0be63258c8b38e3217eb16fae0c5b_10.11.178.133/p1.music.126.net/PFu_Fb_sYULwkoJ87mHDmA==/19023750184014421.jpg?param=130y130',
+      url: 'http://music.163.com/song/media/outer/url?id=489970551.mp3',
+      cover: 'https://p1.music.126.net/PFu_Fb_sYULwkoJ87mHDmA==/19023750184014421.jpg?param=90y90',
     },
+    {
+      name: 'I Really Want to Stay at Your House',
+      artist: 'Samuel Kim / Lorien',
+      url: 'http://music.163.com/song/media/outer/url?id=1990743306.mp3',
+      cover: 'https://p2.music.126.net/-LHyMtXmo-yDf-eqwb8ThA==/109951168143056350.jpg?param=90y90',
+    },
+  
+
+
   ]
 });
