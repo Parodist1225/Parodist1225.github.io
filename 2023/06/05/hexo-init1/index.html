@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>添加网页BGM全局吸底效果及踩坑过程 | 璃月のParodist</title><meta name="author" content="Parodist1225"><meta name="copyright" content="Parodist1225"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="总体思路：  采用Aplayer hexo-tag-aplayer插件也能用，如&amp;#123;% aplayer &quot;Caffeine&quot; &quot;Jeff Williams&quot; &quot;小林未郁 - 千年之羽.mp3&quot; &quot;千年之羽.jpg&quot;  %&amp;#125; --&gt;至于metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了) 在官网下载源码：MoePlayer&#x2F;APlay">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>添加网页BGM全局吸底效果及踩坑过程 | 璃月のParodist</title><meta name="author" content="Parodist1225"><meta name="copyright" content="Parodist1225"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="总体思路：  采用Aplayer hexo-tag-aplayer插件也能用，警告其中支持的metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了),该方法参考Butterfly添加全局吸底Aplayer教程 在官网下载源码：MoePlayer&#x2F;APlayer 上述源码只需取dist文件夹，将其解压至Hexo\themes\你的主题\source中 新建Hex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="添加网页BGM全局吸底效果及踩坑过程">
 <meta property="og:url" content="https://parodist1225.github.io/2023/06/05/hexo-init1/index.html">
 <meta property="og:site_name" content="璃月のParodist">
-<meta property="og:description" content="总体思路：  采用Aplayer hexo-tag-aplayer插件也能用，如&amp;#123;% aplayer &quot;Caffeine&quot; &quot;Jeff Williams&quot; &quot;小林未郁 - 千年之羽.mp3&quot; &quot;千年之羽.jpg&quot;  %&amp;#125; --&gt;至于metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了) 在官网下载源码：MoePlayer&#x2F;APlay">
+<meta property="og:description" content="总体思路：  采用Aplayer hexo-tag-aplayer插件也能用，警告其中支持的metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了),该方法参考Butterfly添加全局吸底Aplayer教程 在官网下载源码：MoePlayer&#x2F;APlayer 上述源码只需取dist文件夹，将其解压至Hexo\themes\你的主题\source中 新建Hex">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://android-imgs.25pp.com/fs08/2023/02/09/8/f6e5ac475c7f102ffd42f38840d78d19.png?x-oss-process=image/watermark,image_d2RqX2ljb24ucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLFBfMzA=,x_30,y_20,t_75">
 <meta property="article:published_time" content="2023-06-05T07:34:22.823Z">
-<meta property="article:modified_time" content="2023-06-05T07:48:48.463Z">
+<meta property="article:modified_time" content="2023-06-05T07:57:47.999Z">
 <meta property="article:author" content="Parodist1225">
 <meta property="article:tag" content="hexo建设">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-06-05 15:48:48'
+  postUpdate: '2023-06-05 15:57:47'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -166,19 +166,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://android-imgs.25pp.com/fs08/2023/02/09/8/f6e5ac475c7f102ffd42f38840d78d19.png?x-oss-process=image/watermark,image_d2RqX2ljb24ucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLFBfMzA=,x_30,y_20,t_75" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="璃月のParodist"><img class="site-icon" src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-hutao/sticker_4.png?6117fce92fae417e17387cd6352ad459&amp;d=200x200"/><span class="site-name">璃月のParodist</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">添加网页BGM全局吸底效果及踩坑过程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-05T07:34:22.823Z" title="发表于 2023-06-05 15:34:22">2023-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-05T07:48:48.463Z" title="更新于 2023-06-05 15:48:48">2023-06-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="添加网页BGM全局吸底效果及踩坑过程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>总体思路：</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://android-imgs.25pp.com/fs08/2023/02/09/8/f6e5ac475c7f102ffd42f38840d78d19.png?x-oss-process=image/watermark,image_d2RqX2ljb24ucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLFBfMzA=,x_30,y_20,t_75" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="璃月のParodist"><img class="site-icon" src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-hutao/sticker_4.png?6117fce92fae417e17387cd6352ad459&amp;d=200x200"/><span class="site-name">璃月のParodist</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">添加网页BGM全局吸底效果及踩坑过程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-05T07:34:22.823Z" title="发表于 2023-06-05 15:34:22">2023-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-05T07:57:47.999Z" title="更新于 2023-06-05 15:57:47">2023-06-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="添加网页BGM全局吸底效果及踩坑过程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>总体思路：</p>
 <ol>
 <li>采用<a target="_blank" rel="noopener" href="https://aplayer.js.org/#/">Aplayer</a></li>
-<li>hexo-tag-aplayer插件也能用，如<code>&#123;% aplayer "Caffeine" "Jeff Williams" "小林未郁 - 千年之羽.mp3" "千年之羽.jpg"  %&#125; --&gt;</code><br>至于metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了)</li>
+<li>hexo-tag-aplayer插件也能用，警告其中支持的metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了),该方法参考<a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/507c070f/">Butterfly添加全局吸底Aplayer教程</a></li>
 <li>在官网下载源码：<a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer">MoePlayer/APlayer</a></li>
 <li>上述源码只需取dist文件夹，将其解压至<code>Hexo\themes\你的主题\source中</code></li>
-<li>新建<code>Hexo\themes\你的主题\source\dist\music.js</code><br>内容为（参考）<pre><code class="lang-js">const ap = new APlayer(&#123;
+<li><p>新建<code>Hexo\themes\你的主题\source\dist\music.js</code><br>内容为（参考）</p>
+<pre><code class="lang-js">const ap = new APlayer(&#123;
  container: document.getElementById(&#39;aplayer&#39;),
  fixed: true,
  autoplay: false,
  audio: [
    &#123;
-     name: &quot;China-Y&quot;,
+     name: &quot;&quot;,
      artist: &#39;徐梦圆&#39;,
      url: &#39;https://www.ytmp3.cn/down/59298.mp3down/39868.mp3&#39;,
      cover: &#39;https://oeff2vktt.bkt.clouddn.com/image/84.jpg&#39;,
@@ -192,8 +193,10 @@
  ]
 &#125;);
 </code></pre>
-更多参数参考上述官方文档<a target="_blank" rel="noopener" href="https://aplayer.js.org/#/">Aplayer</a></li>
-<li>这一步来实现全网页的添加，思路是将下列代码添加至博客每个页面底部<br>以Butterfly主题为例，取该主题_config.butterfly.yml文件中inject部分，将下列四行代码始终挂载在各页面底部<pre><code class="lang-yml">inject:
+<p>更多参数参考上述官方文档<a target="_blank" rel="noopener" href="https://aplayer.js.org/#/">Aplayer</a></p>
+</li>
+<li><p>这一步来实现全网页的添加，思路是将下列代码添加至博客每个页面底部<br>以Butterfly主题为例，取该主题_config.butterfly.yml文件中inject部分，将下列四行代码始终挂载在各页面底部</p>
+<pre><code class="lang-yml">inject:
 head:
  # - &lt;link rel=&quot;stylesheet&quot; href=&quot;/xxx.css&quot;&gt;
 bottom:

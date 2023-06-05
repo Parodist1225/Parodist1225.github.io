@@ -625,16 +625,17 @@ type INumArr = Array&lt;number&gt;;
     <content><![CDATA[<p>总体思路：</p>
 <ol>
 <li>采用<a href="https://aplayer.js.org/#/">Aplayer</a></li>
-<li>hexo-tag-aplayer插件也能用，如<code>&#123;% aplayer "Caffeine" "Jeff Williams" "小林未郁 - 千年之羽.mp3" "千年之羽.jpg"  %&#125; --&gt;</code><br>至于metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了)</li>
+<li>hexo-tag-aplayer插件也能用，警告其中支持的metingjs的网易云接口是经常挂掉ψ(*｀ー´)ψ(至少我配置那段时间网易云api是挂了),该方法参考<a href="https://butterfly.js.org/posts/507c070f/">Butterfly添加全局吸底Aplayer教程</a></li>
 <li>在官网下载源码：<a href="https://github.com/MoePlayer/APlayer">MoePlayer/APlayer</a></li>
 <li>上述源码只需取dist文件夹，将其解压至<code>Hexo\themes\你的主题\source中</code></li>
-<li>新建<code>Hexo\themes\你的主题\source\dist\music.js</code><br>内容为（参考）<pre><code class="lang-js">const ap = new APlayer(&#123;
+<li><p>新建<code>Hexo\themes\你的主题\source\dist\music.js</code><br>内容为（参考）</p>
+<pre><code class="lang-js">const ap = new APlayer(&#123;
  container: document.getElementById(&#39;aplayer&#39;),
  fixed: true,
  autoplay: false,
  audio: [
    &#123;
-     name: &quot;China-Y&quot;,
+     name: &quot;&quot;,
      artist: &#39;徐梦圆&#39;,
      url: &#39;https://www.ytmp3.cn/down/59298.mp3down/39868.mp3&#39;,
      cover: &#39;https://oeff2vktt.bkt.clouddn.com/image/84.jpg&#39;,
@@ -648,8 +649,10 @@ type INumArr = Array&lt;number&gt;;
  ]
 &#125;);
 </code></pre>
-更多参数参考上述官方文档<a href="https://aplayer.js.org/#/">Aplayer</a></li>
-<li>这一步来实现全网页的添加，思路是将下列代码添加至博客每个页面底部<br>以Butterfly主题为例，取该主题_config.butterfly.yml文件中inject部分，将下列四行代码始终挂载在各页面底部<pre><code class="lang-yml">inject:
+<p>更多参数参考上述官方文档<a href="https://aplayer.js.org/#/">Aplayer</a></p>
+</li>
+<li><p>这一步来实现全网页的添加，思路是将下列代码添加至博客每个页面底部<br>以Butterfly主题为例，取该主题_config.butterfly.yml文件中inject部分，将下列四行代码始终挂载在各页面底部</p>
+<pre><code class="lang-yml">inject:
 head:
  # - &lt;link rel=&quot;stylesheet&quot; href=&quot;/xxx.css&quot;&gt;
 bottom:
