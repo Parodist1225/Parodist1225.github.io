@@ -17,6 +17,12 @@
 </code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>添加网页BGM全局吸底效果及踩坑过程</title>
@@ -79,8 +85,11 @@ bottom:
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
-        <tag>hexo建设</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -89,8 +98,11 @@ bottom:
     <content><![CDATA[<p>问题描述：在上传文章中用markdown语法如<code>![](img.jpg)</code>时在实际网站中GET的路径自行被添加/.io/导致获取不到该图片</p>
 <p>解决方法：打开\blog(根目录)\node_modules\hexo-asset-image\index.js，将原第24行<br><code>var endPos = link.lastIndexOf(&#39;.&#39;);</code>改为<code>var endPos = link.length-1;</code></p>
 
-    <div id="aplayer-ipiAxqgG" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-TpLmyeEw" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
         <tag>Debug</tag>
       </tags>
@@ -198,6 +210,12 @@ ECorlor[0] === &#39;Mon&#39; ;
 type INumArr = Array&lt;number&gt;;
 </code></pre>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Typescipt</tag>
+      </tags>
   </entry>
   <entry>
     <title>神经网络入门1</title>
@@ -680,8 +698,12 @@ print(&quot;Frank: %.3f&quot; % network.feedforward(frank)) # 0.039 - M
 </ul>
 <p>接下来你还可以：<br><a href="https://victorzhou.com/blog/intro-to-neural-networks/">跳转底部链接</a></p>
 ]]></content>
+      <categories>
+        <category>AI相关</category>
+      </categories>
       <tags>
         <tag>机器学习</tag>
+        <tag>bp神经网络</tag>
       </tags>
   </entry>
 </search>
